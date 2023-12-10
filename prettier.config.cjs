@@ -3,7 +3,7 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'es5',
   singleQuote: true,
-  printWidth: 100,
+  printWidth: 80,
   // Once Intellij can handle the prettier svelte plugin, I can upgrade to prettier v3
   // Breaking change for that is requiring a plugins array vs v2 where it autodetects
   // plugins: ['prettier-plugin-svelte', '@trivago/prettier-plugin-sort-imports'],
