@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-  <title>Mmmm Noted.</title>
+  <title>Mmmm, Noted.</title>
 </svelte:head>
 
 <main>
