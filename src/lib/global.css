@@ -1,0 +1,10 @@
+@import "@fontsource/inter";
+
+body {
+  margin: 8px 16px;
+  font-family: inter, sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}

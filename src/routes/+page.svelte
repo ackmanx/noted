@@ -1,4 +1,5 @@
 <script>
+  import '@fontsource/cabin-sketch'
   import { marked } from 'marked'
   import { onMount } from 'svelte'
 
@@ -45,9 +46,21 @@
   })
 </script>
 
+<style>
+  @import '$lib/global.css';
+
+  header {
+    font-family: 'cabin sketch', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+  }
+</style>
+
 <svelte:head>
   <title>Mmmm, Noted.</title>
 </svelte:head>
+
+<header>noted</header>
 
 <main>
   <div class="codemirror-container">

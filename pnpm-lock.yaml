@@ -20,6 +20,12 @@ dependencies:
   '@codemirror/view':
     specifier: ^6.22.2
     version: 6.22.2
+  '@fontsource/cabin-sketch':
+    specifier: ^5.0.18
+    version: 5.0.18
+  '@fontsource/inter':
+    specifier: ^5.0.16
+    version: 5.0.16
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.1.1(@sveltejs/kit@1.27.7)
@@ -694,6 +700,14 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
+    dev: false
+
+  /@fontsource/cabin-sketch@5.0.18:
+    resolution: {integrity: sha512-e0cBcr8qquDnBV5MBzZ87P0kUPOxz0NmuwWWrEM1jatNXvc/kgNrtMkGM+robnMQHJVg/Qbp+qgWUTUYFcBVpw==}
+    dev: false
+
+  /@fontsource/inter@5.0.16:
+    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
