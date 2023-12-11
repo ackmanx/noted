@@ -4,7 +4,7 @@
   import MarkdownEdit from './MarkdownEdit.svelte'
 
   /** @type string */
-  let markdownInput = '# Marked in the browser\n\nRendered by **marked**.'
+  let markdownInput
 </script>
 
 <svelte:head>
@@ -14,6 +14,6 @@
 <Header />
 
 <main>
-  <MarkdownEdit markdown={markdownInput} />
-  <MarkdownView markdown={markdownInput} />
+  <MarkdownEdit bind:markdown={markdownInput} />
+  <MarkdownView bind:markdown={markdownInput} />
 </main>

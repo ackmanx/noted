@@ -6,7 +6,6 @@
   import { indentWithTab } from '@codemirror/commands'
   import { markdown as markdownLang } from '@codemirror/lang-markdown'
   import { languages } from '@codemirror/language-data'
-  import { marked } from 'marked'
 
   /** @type string */
   export let markdown
@@ -31,7 +30,7 @@
           // Register an event listener for content changes
           EditorView.updateListener.of((update) => {
             if (update.docChanged) {
-              htmlPreview = marked.parse(update.state.doc.toString())
+              markdown = update.state.doc.toString()
             }
           }),
         ],
