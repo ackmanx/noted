@@ -19,7 +19,8 @@
       state: EditorState.create({
         // Initial doc
         doc: markdown,
-        // Says extensions, but these are facets according to the docs
+        // Says extensions, but some are facets too
+        // Also, `.of()` is how we assign something to a facet (like an event callback in updateListener)
         extensions: [
           // Adds some basic stuff like line numbers
           basicSetup,
