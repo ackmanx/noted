@@ -1,3 +1,8 @@
+<script>
+  /** @type boolean */
+  export let isPreviewActive
+</script>
+
 <style>
   header {
     font-family: 'cabin sketch', sans-serif;
@@ -6,4 +11,18 @@
   }
 </style>
 
-<header>noted</header>
+<header>
+  noted
+
+  <button
+    on:click={() => {
+      isPreviewActive = !isPreviewActive
+    }}
+  >
+    {#if isPreviewActive}
+      Edit
+    {:else}
+      Preview
+    {/if}
+  </button>
+</header>

@@ -5,15 +5,21 @@
 
   /** @type string */
   let markdownInput
+
+  /** @type boolean */
+  let isPreviewActive = false
 </script>
 
 <svelte:head>
   <title>Mmmm, Noted.</title>
 </svelte:head>
 
-<Header />
+<Header bind:isPreviewActive />
 
 <main>
-  <MarkdownEdit bind:markdown={markdownInput} />
-  <MarkdownView markdown={markdownInput} />
+  {#if isPreviewActive}
+    <MarkdownView markdown={markdownInput} />
+  {:else}
+    <MarkdownEdit bind:markdown={markdownInput} />
+  {/if}
 </main>
