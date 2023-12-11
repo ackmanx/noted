@@ -30,6 +30,10 @@
   img {
     height: 40px;
   }
+
+  .notActive {
+    opacity: 0.25;
+  }
 </style>
 
 <header>
@@ -37,6 +41,7 @@
 
   <div class="icons-container">
     <button
+      class:notActive={isPreviewActive}
       on:click={() => {
         isPreviewActive = false
       }}
@@ -45,6 +50,7 @@
     </button>
 
     <button
+      class:notActive={!isPreviewActive}
       on:click={() => {
         isPreviewActive = true
       }}
