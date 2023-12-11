@@ -15,5 +15,5 @@
 
 <main>
   <MarkdownEdit bind:markdown={markdownInput} />
-  <MarkdownView bind:markdown={markdownInput} />
+  <MarkdownView markdown={markdownInput} />
 </main>
