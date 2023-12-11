@@ -7,7 +7,7 @@
   let markdownInput
 
   /** @type boolean */
-  let isPreviewActive = false
+  let isPreviewActive = true
 </script>
 
 <svelte:head>
