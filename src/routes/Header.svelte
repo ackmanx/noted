@@ -14,6 +14,9 @@
     font-family: 'cabin sketch', sans-serif;
     font-size: 40px;
     font-style: italic;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
   }
 
   .icons-container {
