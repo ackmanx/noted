@@ -8,6 +8,12 @@
 
   /** @type boolean */
   let isPreviewActive = true
+
+  // +page components receive props from their respective +page.server file
+  export let data
+
+  // Is $: necessary here? What's it do here?
+  $: ({ text } = data)
 </script>
 
 <svelte:head>
@@ -15,6 +21,10 @@
 </svelte:head>
 
 <Header bind:isPreviewActive />
+
+<hr />
+{JSON.stringify(text)}
+<hr />
 
 <main>
   {#if isPreviewActive}
