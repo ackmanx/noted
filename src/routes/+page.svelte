@@ -21,8 +21,4 @@
 
 <Header bind:isPreviewActive />
 
-<hr />
-{JSON.stringify(text)}
-<hr />
-
 <Body {isPreviewActive} {markdownInput} />
