@@ -1,7 +1,6 @@
 <script>
   import Header from './Header.svelte'
-  import MarkdownView from './MarkdownView.svelte'
-  import MarkdownEdit from './MarkdownEdit.svelte'
+  import Body from './Body.svelte'
 
   /** @type string */
   let markdownInput
@@ -26,10 +25,4 @@
 {JSON.stringify(text)}
 <hr />
 
-<main>
-  {#if isPreviewActive}
-    <MarkdownView markdown={markdownInput} />
-  {:else}
-    <MarkdownEdit bind:markdown={markdownInput} />
-  {/if}
-</main>
+<Body {isPreviewActive} {markdownInput} />
