@@ -22,7 +22,3 @@
 <Header bind:isPreviewActive />
 
 <Body {isPreviewActive} {markdownInput} {fileTree} />
-
-<pre><code>
-  {JSON.stringify(fileTree, null, 4)}
-</code></pre>
