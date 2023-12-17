@@ -1,12 +1,9 @@
 <script>
-  /**
-   * @typedef {import("@skeletonlabs/skeleton").TreeViewNode} TreeViewNode
-   */
-
   import MarkdownEdit from './MarkdownEdit.svelte'
   import MarkdownView from './MarkdownView.svelte'
 
   import { RecursiveTreeView } from '@skeletonlabs/skeleton'
+  import FolderView from './FolderView.svelte'
 
   /** @type boolean */
   export let isPreviewActive
@@ -21,19 +18,13 @@
     display: flex;
   }
 
-  .folder-view {
-    width: 300px;
-  }
-
   .markdown-view {
     flex-grow: 1;
   }
 </style>
 
 <main>
-  <div class="folder-view">
-    <RecursiveTreeView nodes={fileTree} />
-  </div>
+  <FolderView {fileTree} />
 
   <div class="markdown-view">
     {#if isPreviewActive}
