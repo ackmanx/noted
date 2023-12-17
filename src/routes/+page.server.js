@@ -12,6 +12,10 @@ export const load = async function () {
           _id: { $toString: '$_id' },
           path: 1,
           label: 1,
+          // Add this computed field based on if the "text" field exists or not
+          isDirectory: {
+            $cond: ['$text', false, true],
+          },
         },
       },
     ])

@@ -22,3 +22,7 @@
 <Header bind:isPreviewActive />
 
 <Body {isPreviewActive} {markdownInput} />
+
+<pre><code>
+  {JSON.stringify(text, null, 4)}
+</code></pre>
