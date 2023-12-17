@@ -12,7 +12,7 @@
   export let data
 
   // Is $: necessary here? What's it do here?
-  $: ({ text } = data)
+  $: ({ fileTree } = data)
 </script>
 
 <svelte:head>
@@ -21,8 +21,8 @@
 
 <Header bind:isPreviewActive />
 
-<Body {isPreviewActive} {markdownInput} />
+<Body {isPreviewActive} {markdownInput} {fileTree} />
 
 <pre><code>
-  {JSON.stringify(text, null, 4)}
+  {JSON.stringify(fileTree, null, 4)}
 </code></pre>

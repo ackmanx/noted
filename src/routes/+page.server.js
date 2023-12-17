@@ -1,7 +1,7 @@
 import { notes } from '$lib/db/notes.js'
 
 export const load = async function () {
-  const documentsForUser = await notes
+  const fileForUser = await notes
     .aggregate([
       {
         $match: { author: 'ackmanx' },
@@ -18,15 +18,25 @@ export const load = async function () {
           },
         },
       },
+      {
+        $sort: { path: 1 },
+      },
     ])
     .toArray()
 
-  // Debug logging
-  console.log('^_^', 'Documents from MongoDB:', documentsForUser)
+  const fileTree = []
 
-  const fileTree = true
-
-  /* prettier-ignore */ console.log('^_^', 'File tree:', fileTree)
+  for (let file of fileForUser) {
+    // Root level files without a path cannot be a directory
+    //todo majerus: I should rename path to be "directoryPath" so this is clear
+    if (file.path === '') {
+      fileTree.push({
+        id: file.label,
+        content: file.label,
+        path: file.path,
+      })
+    }
+  }
 
   return {
     fileTree,

@@ -12,56 +12,13 @@
   export let isPreviewActive
   /** @type string */
   export let markdownInput
-
   /** @type TreeViewNode[] */
-  let myTreeViewNodes = [
-    {
-      id: 'unique-id1',
-      content: '1',
-      lead: '(icon)',
-      children: [
-        {
-          id: 'unique-id2',
-          content: '2',
-          lead: '(icon)',
-          children: [
-            {
-              id: 'unique-id3',
-              content: '3',
-              lead: '(icon)',
-              children: [],
-            },
-          ],
-        },
-        {
-          id: 'unique-id1a',
-          content: '1a',
-          lead: '(icon)',
-          children: [
-            {
-              id: 'unique-id2a',
-              content: '2a',
-              lead: '(icon)',
-              children: [
-                {
-                  id: 'unique-id3a',
-                  content: '3a',
-                  lead: '(icon)',
-                  children: [],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ]
+  export let fileTree
 </script>
 
 <style>
   main {
     display: flex;
-    /*flex-direction: column;*/
   }
 
   .folder-view {
@@ -75,7 +32,7 @@
 
 <main>
   <div class="folder-view">
-    <RecursiveTreeView nodes={myTreeViewNodes} />
+    <RecursiveTreeView nodes={fileTree} />
   </div>
 
   <div class="markdown-view">
