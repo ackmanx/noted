@@ -59,7 +59,7 @@ function recurse(dbFiles, parent, level, dbFilesForUser) {
         recurse(
           children,
           {
-            id: dbFile.path,
+            id: dbFile._id,
             content: dbFile.path.split('/').at(-1),
             children: [],
           },
@@ -69,7 +69,7 @@ function recurse(dbFiles, parent, level, dbFilesForUser) {
       )
     } else {
       parent.children.push({
-        id: dbFile.path,
+        id: dbFile._id,
         // @ts-ignore
         isLeaf: true,
         content: dbFile.path.split('/').at(-1),

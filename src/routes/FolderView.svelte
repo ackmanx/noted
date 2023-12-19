@@ -4,8 +4,9 @@
   /** @type TreeViewNode[] */
   export let fileTree
 
-  function handleClick(something) {
-    /* prettier-ignore */ console.log('^_^', something)
+  async function handleClick({ detail }) {
+    const response = await fetch(`/api/note/${detail.id}`)
+    /* prettier-ignore */ console.log('^_^', await response.json())
   }
 </script>
 
