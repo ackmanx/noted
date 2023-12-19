@@ -23,6 +23,7 @@ export default {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/typography'),
     // 4. Append the Skeleton plugin (after other plugins)
     skeleton,
   ],

@@ -18,7 +18,7 @@
     display: flex;
   }
 
-  .markdown-view {
+  .markdown {
     flex-grow: 1;
   }
 </style>
@@ -26,9 +26,12 @@
 <main>
   <FolderView {fileTree} bind:markdownInput />
 
-  <div class="markdown-view">
+  <div class="markdown">
     {#if isPreviewActive}
-      <MarkdownView markdown={markdownInput} />
+      <!-- Apply Tailwind typography styling from their typography plugin -->
+      <article class="prose lg:prose-xl">
+        <MarkdownView markdown={markdownInput} />
+      </article>
     {:else}
       <MarkdownEdit bind:markdown={markdownInput} />
     {/if}
