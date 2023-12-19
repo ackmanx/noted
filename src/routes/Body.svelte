@@ -2,15 +2,15 @@
   import MarkdownEdit from './MarkdownEdit.svelte'
   import MarkdownView from './MarkdownView.svelte'
 
-  import { RecursiveTreeView } from '@skeletonlabs/skeleton'
   import FolderView from './FolderView.svelte'
 
   /** @type boolean */
   export let isPreviewActive
-  /** @type string */
-  export let markdownInput
   /** @type TreeViewNode[] */
   export let fileTree
+
+  /** @type string */
+  let markdownInput
 </script>
 
 <style>
@@ -24,7 +24,7 @@
 </style>
 
 <main>
-  <FolderView {fileTree} />
+  <FolderView {fileTree} bind:markdownInput />
 
   <div class="markdown-view">
     {#if isPreviewActive}

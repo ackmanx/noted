@@ -2,9 +2,6 @@
   import Header from './Header.svelte'
   import Body from './Body.svelte'
 
-  /** @type string */
-  let markdownInput
-
   /** @type boolean */
   let isPreviewActive = true
 
@@ -21,4 +18,4 @@
 
 <Header bind:isPreviewActive />
 
-<Body {isPreviewActive} {markdownInput} {fileTree} />
+<Body {isPreviewActive} {fileTree} />

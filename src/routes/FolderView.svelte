@@ -3,10 +3,14 @@
 
   /** @type TreeViewNode[] */
   export let fileTree
+  /** @type string */
+  export let markdownInput
 
   async function handleClick({ detail }) {
     const response = await fetch(`/api/note/${detail.id}`)
-    /* prettier-ignore */ console.log('^_^', await response.json())
+    const json = await response.json()
+
+    markdownInput = json.markdown
   }
 </script>
 
