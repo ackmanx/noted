@@ -1,6 +1,6 @@
 <script>
-  import PreviewIcon from '$lib/images/preview-icon.svg'
-  import EditIcon from '$lib/images/edit-icon.svg'
+  import PreviewIcon from '$lib/images/PreviewIcon.svelte'
+  import EditIcon from '$lib/images/EditIcon.svelte'
 
   /** @type boolean */
   export let isPreviewActive
@@ -30,10 +30,6 @@
     cursor: pointer;
   }
 
-  img {
-    height: 40px;
-  }
-
   .notActive {
     opacity: 0.25;
   }
@@ -49,7 +45,7 @@
         isPreviewActive = false
       }}
     >
-      <img src={EditIcon} alt="" />
+      <EditIcon />
     </button>
 
     <button
@@ -58,7 +54,7 @@
         isPreviewActive = true
       }}
     >
-      <img src={PreviewIcon} alt="" />
+      <PreviewIcon />
     </button>
   </div>
 </header>

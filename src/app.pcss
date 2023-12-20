@@ -11,6 +11,32 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-color: #ffffff;
+  --font-color: #000000;
+
+  --app-side-padding: 16px;
+
+  --spacing2x: 32px;
+  --spacing175x: 24px;
+  --spacing15x: 18px;
+  --spacing: 16px;
+  --spacing75: 12px;
+  --spacing50: 8px;
+  --spacing25: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #191919;
+    --font-color: #ffffff;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
 body {
   margin: 8px 16px;
   /*
