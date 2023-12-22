@@ -17,6 +17,7 @@
 <style>
   .folder-view {
     width: 300px;
+    margin-right: 10px;
   }
 </style>
 

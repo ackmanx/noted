@@ -26,6 +26,11 @@
   --spacing25: 4px;
 }
 
+::selection{
+  color: yellow;
+  background-color: black;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #191919;
@@ -34,6 +39,19 @@
 
   html {
     color-scheme: dark;
+  }
+
+  ::selection{
+    color: black;
+    background-color: yellow;
+  }
+
+  /* Tailwind Prose/Typography plugin can be overwritten here in a dirty way */
+  /* Ideally I conditionally set their dark theme class instead, just need to figure out how */
+  .prose {
+    h1, h2, h3, a, strong, blockquote {
+      color: #4563a5;
+    }
   }
 }
 
