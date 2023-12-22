@@ -5,8 +5,14 @@
   export let fileTree
   /** @type string */
   export let markdownInput
+  /** @type string[] */
+  export let foldersIdList
 
   async function handleClick({ detail }) {
+    if (foldersIdList.includes(detail.id)) {
+      return
+    }
+
     const response = await fetch(`/api/note/${detail.id}`)
     const json = await response.json()
 

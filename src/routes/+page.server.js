@@ -1,6 +1,8 @@
 import { notes } from '$lib/db/notes.js'
 
 export const load = async function () {
+  const foldersIdList = []
+
   const dbFilesForUser = await notes
     .aggregate([
       {
@@ -32,15 +34,20 @@ export const load = async function () {
       children: [],
     },
     1,
-    dbFilesForUser
+    dbFilesForUser,
+    foldersIdList
   )
 
   return {
+    // File/folder tree in the structure expected by Skeleton UI's tree component
     fileTree: maybe.children,
+    // Tree handler only provides ID on click and I need to know if that is a folder or a file
+    // Instead of searching the tree, just use this list
+    foldersIdList,
   }
 }
 
-function recurse(dbFiles, parent, level, dbFilesForUser) {
+function recurse(dbFiles, parent, level, dbFilesForUser, foldersIdList) {
   const dbFilesForLevel = dbFiles.filter(
     (filterFile) => filterFile.path.split('/').length === level
   )
@@ -55,6 +62,8 @@ function recurse(dbFiles, parent, level, dbFilesForUser) {
     })
 
     if (children.length) {
+      foldersIdList.push(dbFile._id)
+
       parent.children.push(
         recurse(
           children,
@@ -64,7 +73,8 @@ function recurse(dbFiles, parent, level, dbFilesForUser) {
             children: [],
           },
           level + 1,
-          dbFilesForUser
+          dbFilesForUser,
+          foldersIdList
         )
       )
     } else {

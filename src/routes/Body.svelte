@@ -8,6 +8,8 @@
   export let isPreviewActive
   /** @type TreeViewNode[] */
   export let fileTree
+  /** @type string[] */
+  export let foldersIdList
 
   /** @type string */
   let markdownInput
@@ -24,7 +26,7 @@
 </style>
 
 <main>
-  <FolderView {fileTree} bind:markdownInput />
+  <FolderView {fileTree} {foldersIdList} bind:markdownInput />
 
   <div class="markdown">
     {#if isPreviewActive}

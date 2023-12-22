@@ -10,6 +10,7 @@
 
   // Is $: necessary here? What's it do here?
   $: ({ fileTree } = data)
+  $: ({ foldersIdList } = data)
 </script>
 
 <svelte:head>
@@ -18,4 +19,4 @@
 
 <Header bind:isPreviewActive />
 
-<Body {isPreviewActive} {fileTree} />
+<Body {isPreviewActive} {fileTree} {foldersIdList} />
