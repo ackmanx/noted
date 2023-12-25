@@ -17,6 +17,11 @@
       open = !open
     }
   }
+
+  function handleRightClick(event) {
+    event.preventDefault()
+    /* prettier-ignore */ console.log('^_^', 'oh yeah context baby')
+  }
 </script>
 
 <style>
@@ -39,7 +44,11 @@
   }
 </style>
 
-<li style="padding-left: {indent}px" on:click={toggleOpen}>
+<li
+  style="padding-left: {indent}px"
+  on:click={toggleOpen}
+  on:contextmenu={handleRightClick}
+>
   {content}
 </li>
 
