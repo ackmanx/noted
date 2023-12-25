@@ -34,7 +34,7 @@
     padding-bottom: 8px;
 
     &:hover {
-      border: 1px solid red;
+      color: red;
     }
   }
 </style>
