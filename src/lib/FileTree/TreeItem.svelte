@@ -6,36 +6,56 @@
   export let indent = 0
   export let onClickLeaf
 
-  let open = true
+  let open = false
 
   function toggleOpen(event) {
     event.stopPropagation()
 
-    /* prettier-ignore */ console.log('^_^', 'toggle open for', content)
-    open = !open
-
     if (isLeaf) {
       onClickLeaf({ detail: { id } })
+    } else {
+      open = !open
     }
+  }
+
+  function handleRightClick(event) {
+    event.preventDefault()
+    /* prettier-ignore */ console.log('^_^', 'oh yeah context baby')
   }
 </script>
 
 <style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   li {
     cursor: pointer;
     user-select: none;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+
+    &:hover {
+      color: red;
+    }
   }
 </style>
 
-<li style="padding-left: {indent}px" on:click={toggleOpen}>
+<li
+  style="padding-left: {indent}px"
+  on:click={toggleOpen}
+  on:contextmenu={handleRightClick}
+>
   {content}
-  {open}
-
-  {#if open}
-    <ul>
-      {#each children as child}
-        <svelte:self {...child} indent={indent + 24} {onClickLeaf} />
-      {/each}
-    </ul>
-  {/if}
 </li>
+
+{#if open}
+  <ul>
+    {#each children as child}
+      <svelte:self {...child} indent={indent + 24} {onClickLeaf} />
+    {/each}
+  </ul>
+{/if}
