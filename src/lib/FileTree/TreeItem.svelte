@@ -41,12 +41,12 @@
 
 <li style="padding-left: {indent}px" on:click={toggleOpen}>
   {content}
-
-  {#if open}
-    <ul>
-      {#each children as child}
-        <svelte:self {...child} indent={indent + 24} {onClickLeaf} />
-      {/each}
-    </ul>
-  {/if}
 </li>
+
+{#if open}
+  <ul>
+    {#each children as child}
+      <svelte:self {...child} indent={indent + 24} {onClickLeaf} />
+    {/each}
+  </ul>
+{/if}
