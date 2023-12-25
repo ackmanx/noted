@@ -39,7 +39,7 @@ export const load = async function () {
   )
 
   return {
-    // File/folder tree in the structure expected by Skeleton UI's tree component
+    // File/folder tree in the structure expected FileTree UI component
     fileTree: maybe.children,
     // Tree handler only provides ID on click and I need to know if that is a folder or a file
     // Instead of searching the tree, just use this list
