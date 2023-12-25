@@ -1,5 +1,5 @@
 <script>
-  import { RecursiveTreeView } from '@skeletonlabs/skeleton'
+  import FileTree from '$lib/FileTree/FileTree.svelte'
 
   /** @type TreeViewNode[] */
   export let fileTree
@@ -8,7 +8,7 @@
   /** @type string[] */
   export let foldersIdList
 
-  async function handleClick({ detail }) {
+  async function handleFetchMarkdown({ detail }) {
     if (foldersIdList.includes(detail.id)) {
       return
     }
@@ -29,5 +29,5 @@
 </style>
 
 <div class="folder-view">
-  <RecursiveTreeView nodes={fileTree} on:click={handleClick} />
+  <FileTree {fileTree} onClickLeaf={handleFetchMarkdown} />
 </div>

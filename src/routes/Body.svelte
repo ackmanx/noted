@@ -30,8 +30,7 @@
 
   <div class="markdown">
     {#if isPreviewActive}
-      <!-- Apply Tailwind typography styling from their typography plugin -->
-      <article class="prose lg:prose-xl">
+      <article class="prose">
         <MarkdownView markdown={markdownInput} />
       </article>
     {:else}

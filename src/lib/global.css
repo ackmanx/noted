@@ -1,0 +1,47 @@
+@import "@fontsource/inter";
+
+body {
+  margin: 16px;
+  font-family: inter, sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #ffffff;
+  --font-color: #000000;
+
+  --app-side-padding: 16px;
+
+  --spacing2x: 32px;
+  --spacing175x: 24px;
+  --spacing15x: 18px;
+  --spacing: 16px;
+  --spacing75: 12px;
+  --spacing50: 8px;
+  --spacing25: 4px;
+}
+
+::selection{
+  color: yellow;
+  background-color: black;
+}
+
+/*
+ * DARK MODE!!!!!
+ */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  ::selection{
+    color: black;
+    background-color: yellow;
+  }
+}
+/*
+ * END DARK MODE
+ */
