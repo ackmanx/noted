@@ -3,7 +3,7 @@ import { notes } from '$lib/db/notes.js'
 export const load = async function () {
   const foldersIdList = []
 
-  const dbFilesForUser = await notes
+  const dbFilesForUserAsFlatRecordsArray = await notes
     .aggregate([
       {
         $match: { author: 'ackmanx' },
@@ -14,10 +14,6 @@ export const load = async function () {
           _id: { $toString: '$_id' },
           path: 1,
           label: 1,
-          // Add this computed field based on if the "text" field exists or not
-          isDirectory: {
-            $cond: ['$text', false, true],
-          },
         },
       },
       {
@@ -26,21 +22,21 @@ export const load = async function () {
     ])
     .toArray()
 
-  const maybe = recurse(
-    dbFilesForUser,
+  const builtFileTree = recurse(
+    dbFilesForUserAsFlatRecordsArray,
     {
       id: 'root',
       content: 'root',
       children: [],
     },
     1,
-    dbFilesForUser,
+    dbFilesForUserAsFlatRecordsArray,
     foldersIdList
   )
 
   return {
     // File/folder tree in the structure expected FileTree UI component
-    fileTree: maybe.children,
+    fileTree: builtFileTree.children,
     // Tree handler only provides ID on click and I need to know if that is a folder or a file
     // Instead of searching the tree, just use this list
     foldersIdList,
@@ -69,7 +65,7 @@ function recurse(dbFiles, parent, level, dbFilesForUser, foldersIdList) {
           children,
           {
             id: dbFile._id,
-            content: dbFile.path.split('/').at(-1),
+            fileName: dbFile.path.split('/').at(-1),
             children: [],
           },
           level + 1,
@@ -82,7 +78,7 @@ function recurse(dbFiles, parent, level, dbFilesForUser, foldersIdList) {
         id: dbFile._id,
         // @ts-ignore
         isLeaf: true,
-        content: dbFile.path.split('/').at(-1),
+        fileName: dbFile.path.split('/').at(-1),
         children: [],
       })
     }

@@ -1,7 +1,7 @@
 <script>
   export let id = ''
   export let isLeaf = false
-  export let content = ''
+  export let fileName = ''
   export let children = []
   export let indent = 0
   export let onClickLeaf
@@ -49,7 +49,7 @@
   on:click={toggleOpen}
   on:contextmenu={handleRightClick}
 >
-  {content}
+  {fileName}
 </li>
 
 {#if open}

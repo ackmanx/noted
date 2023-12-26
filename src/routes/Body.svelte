@@ -11,6 +11,8 @@
   /** @type string[] */
   export let foldersIdList
 
+  /* prettier-ignore */ console.log('^_^', fileTree)
+
   /** @type string */
   let markdownInput
 </script>
