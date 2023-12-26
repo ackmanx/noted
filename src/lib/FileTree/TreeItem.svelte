@@ -50,7 +50,7 @@
   div {
     flex-shrink: 0;
     width: 22px;
-    transition: transform 100ms ease-in;
+    transition: transform 150ms ease-in;
   }
 
   .open {
