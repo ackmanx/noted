@@ -1,4 +1,6 @@
 <script>
+  import ArrowUp from '$lib/images/ArrowUp.svelte'
+
   export let id = ''
   export let isLeaf = false
   export let fileName = ''
@@ -32,15 +34,22 @@
   }
 
   li {
+    display: flex;
     cursor: pointer;
     user-select: none;
     padding-top: 8px;
     padding-right: 8px;
     padding-bottom: 8px;
+    /* padding-left dynamically set below */
 
     &:hover {
       color: red;
     }
+  }
+
+  div {
+    flex-shrink: 0;
+    width: 22px;
   }
 </style>
 
@@ -49,6 +58,12 @@
   on:click={toggleOpen}
   on:contextmenu={handleRightClick}
 >
+  <div>
+    {#if children.length}
+      <ArrowUp />
+    {/if}
+  </div>
+
   {fileName}
 </li>
 
