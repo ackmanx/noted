@@ -50,6 +50,11 @@
   div {
     flex-shrink: 0;
     width: 22px;
+    transition: transform 100ms ease-in;
+  }
+
+  .open {
+    transform: rotate(90deg);
   }
 </style>
 
@@ -58,7 +63,7 @@
   on:click={toggleOpen}
   on:contextmenu={handleRightClick}
 >
-  <div>
+  <div class:open>
     {#if children.length}
       <ArrowUp />
     {/if}
