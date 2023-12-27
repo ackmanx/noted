@@ -9,6 +9,8 @@
 
   /** @type string */
   export let markdown
+  /** @type string */
+  export let markdownInputTemp
 
   onMount(() => {
     // The Markdown parser will dynamically load parsers
@@ -16,8 +18,8 @@
     // look up the appropriate dynamic import.
     new EditorView({
       state: EditorState.create({
-        // Initial doc
-        doc: markdown,
+        // Initial doc. This could be either the original markdown, or an edit-in-progress and the user has just came back from preview
+        doc: markdownInputTemp ?? markdown,
         // Says extensions, but some are facets too
         // Also, `.of()` is how we assign something to a facet (like an event callback in updateListener)
         extensions: [
@@ -30,7 +32,7 @@
           // Register an event listener for content changes
           EditorView.updateListener.of((update) => {
             if (update.docChanged) {
-              markdown = update.state.doc.toString()
+              markdownInputTemp = update.state.doc.toString()
             }
           }),
         ],

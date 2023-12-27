@@ -15,6 +15,8 @@
 
   /** @type string */
   let markdownInput
+  /** @type string */
+  let markdownInputTemp
 </script>
 
 <style>
@@ -40,10 +42,10 @@
   <div class="markdown">
     {#if isPreviewActive}
       <article class="prose">
-        <MarkdownView markdown={markdownInput} />
+        <MarkdownView markdown={markdownInput} {markdownInputTemp} />
       </article>
     {:else}
-      <MarkdownEdit bind:markdown={markdownInput} />
+      <MarkdownEdit bind:markdown={markdownInput} bind:markdownInputTemp />
     {/if}
   </div>
 </main>
