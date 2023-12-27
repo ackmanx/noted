@@ -27,6 +27,13 @@
   }
 </style>
 
+<!--
+ - Flow:
+ - `markdownInput` is reactive. It gets populated initially from FolderView
+ - Then it is used for the View mode, getting converted to HTML
+ - It's also sent to CodeMirror in Edit mode to be changed
+   - Changes are applied to it, which then makes it available for view mode automatically
+ -->
 <main>
   <FolderView {fileTree} {foldersIdList} bind:markdownInput />
 
