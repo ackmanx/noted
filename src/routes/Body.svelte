@@ -15,7 +15,7 @@
 
   /** @type string */
   let markdownInput
-  /** @type string */
+  /** @type string | undefined */
   let markdownInputTemp
 </script>
 
@@ -37,7 +37,12 @@
    - Changes are applied to it, which then makes it available for view mode automatically
  -->
 <main>
-  <FolderView {fileTree} {foldersIdList} bind:markdownInput />
+  <FolderView
+    {fileTree}
+    {foldersIdList}
+    bind:markdownInput
+    bind:markdownInputTemp
+  />
 
   <div class="markdown">
     {#if isPreviewActive}

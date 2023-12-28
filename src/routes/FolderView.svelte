@@ -5,6 +5,8 @@
   export let fileTree
   /** @type string */
   export let markdownInput
+  /** @type string | undefined */
+  export let markdownInputTemp
   /** @type string[] */
   export let foldersIdList
 
@@ -17,6 +19,7 @@
     const json = await response.json()
 
     markdownInput = json.markdown
+    markdownInputTemp = undefined
   }
 </script>
 

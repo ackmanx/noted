@@ -3,7 +3,7 @@
 
   /** @type string */
   export let markdown = ''
-  /** @type string */
+  /** @type string | undefined */
   export let markdownInputTemp = ''
 </script>
 
