@@ -15,11 +15,7 @@
       return
     }
 
-    const response = await fetch(`/api/note/${detail.id}`)
-    const json = await response.json()
-
-    markdownInput = json.markdown
-    markdownInputTemp = undefined
+    window.location.href = `/note/${detail.id}`
   }
 </script>
 
