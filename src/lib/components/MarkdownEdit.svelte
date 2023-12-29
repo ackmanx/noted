@@ -11,6 +11,8 @@
   export let markdown
   /** @type string | undefined */
   export let markdownInputTemp
+  /** @type string | undefined */
+  export let currentNoteId
 
   onMount(() => {
     // The Markdown parser will dynamically load parsers
@@ -41,8 +43,18 @@
       parent: document.querySelector('.codemirror-container') ?? undefined,
     })
   })
+
+  async function handleSave() {
+    const response = await fetch(`/api/note/${currentNoteId}`, {
+      method: 'POST',
+      body: JSON.stringify({ markdown: markdownInputTemp }),
+    })
+
+    const json = await response.json()
+  }
 </script>
 
+<button on:click={handleSave}>Save</button>
 <div class="codemirror-container">
   <!-- CodeMirror markdown editor is injected here due to `parent` field above -->
 </div>

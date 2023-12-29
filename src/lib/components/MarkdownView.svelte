@@ -5,8 +5,6 @@
   export let markdown = ''
   /** @type string | undefined */
   export let markdownInputTemp = ''
-
-  /* prettier-ignore */ console.log('^_^', markdown)
 </script>
 
 {#if markdownInputTemp}

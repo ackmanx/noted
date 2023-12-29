@@ -12,8 +12,8 @@
   export let foldersIdList
   /** @type string | undefined */
   export let markdown
-
-  /* prettier-ignore */ console.log('^_^', fileTree)
+  /** @type string | undefined */
+  export let currentNoteId
 
   /** @type string | undefined */
   let markdownInput = markdown
@@ -52,7 +52,11 @@
         <MarkdownView markdown={markdownInput} {markdownInputTemp} />
       </article>
     {:else}
-      <MarkdownEdit bind:markdown={markdownInput} bind:markdownInputTemp />
+      <MarkdownEdit
+        bind:markdown={markdownInput}
+        bind:markdownInputTemp
+        {currentNoteId}
+      />
     {/if}
   </div>
 </main>

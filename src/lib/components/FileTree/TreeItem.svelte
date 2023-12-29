@@ -22,7 +22,6 @@
 
   function handleRightClick(event) {
     event.preventDefault()
-    /* prettier-ignore */ console.log('^_^', 'oh yeah context baby')
   }
 </script>
 
