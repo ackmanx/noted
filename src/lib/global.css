@@ -9,6 +9,13 @@ body * {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
 :root {
   --background-color: #ffffff;
   --font-color: #000000;

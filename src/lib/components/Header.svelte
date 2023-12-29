@@ -11,11 +11,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
     font-family: 'cabin sketch', sans-serif;
     font-size: 40px;
     font-style: italic;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
   }
 
   .icons-container {
@@ -35,7 +41,7 @@
 </style>
 
 <header>
-  <div>noted</div>
+  <h1><a href="/">noted</a></h1>
 
   <div class="icons-container">
     <button
