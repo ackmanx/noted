@@ -10,11 +10,13 @@
   export let fileTree
   /** @type string[] */
   export let foldersIdList
+  /** @type string | undefined */
+  export let markdown
 
   /* prettier-ignore */ console.log('^_^', fileTree)
 
-  /** @type string */
-  let markdownInput
+  /** @type string | undefined */
+  let markdownInput = markdown
   /** @type string | undefined */
   let markdownInputTemp
 </script>

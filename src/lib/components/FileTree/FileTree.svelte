@@ -1,5 +1,5 @@
 <script>
-  import TreeItem from '$lib/FileTree/TreeItem.svelte'
+  import TreeItem from '$lib/components/FileTree/TreeItem.svelte'
 
   /** @type TreeViewNode[] */
   export let fileTree

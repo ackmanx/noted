@@ -1,9 +1,9 @@
 <script>
-  import FileTree from '$lib/FileTree/FileTree.svelte'
+  import FileTree from '$lib/components/FileTree/FileTree.svelte'
 
   /** @type TreeViewNode[] */
   export let fileTree
-  /** @type string */
+  /** @type string | undefined */
   export let markdownInput
   /** @type string | undefined */
   export let markdownInputTemp

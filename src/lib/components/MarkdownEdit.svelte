@@ -7,7 +7,7 @@
   import { markdown as markdownLang } from '@codemirror/lang-markdown'
   import { languages } from '@codemirror/language-data'
 
-  /** @type string */
+  /** @type string | undefined */
   export let markdown
   /** @type string | undefined */
   export let markdownInputTemp
