@@ -1,12 +1,9 @@
-<script>
+<script lang="ts">
   import FileTree from '$lib/components/FileTree/FileTree.svelte'
 
   export let fileTree
-
   export let markdownInput
-
   export let markdownInputTemp
-
   export let foldersIdList
   export let currentNoteId
 

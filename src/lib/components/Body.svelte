@@ -1,21 +1,15 @@
-<script>
+<script lang="ts">
+  import FolderView from './FolderView.svelte'
   import MarkdownEdit from './MarkdownEdit.svelte'
   import MarkdownView from './MarkdownView.svelte'
 
-  import FolderView from './FolderView.svelte'
-
-  export let isPreviewActive
-
-  export let fileTree
-
-  export let foldersIdList
-
-  export let markdown
-
-  export let currentNoteId
+  export let isPreviewActive: boolean
+  export let fileTree: any
+  export let foldersIdList: string[]
+  export let markdown: string = undefined
+  export let currentNoteId: string | undefined = undefined
 
   let markdownInput = markdown
-
   let markdownInputTemp
 </script>
 

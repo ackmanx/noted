@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import ArrowUp from '$lib/images/ArrowUp.svelte'
 
   export let id = ''

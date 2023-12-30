@@ -1,16 +1,15 @@
-<script>
+<script lang="ts">
+  import { EditorView, basicSetup } from 'codemirror'
   import { onMount } from 'svelte'
-  import { basicSetup, EditorView } from 'codemirror'
-  import { EditorState } from '@codemirror/state'
-  import { keymap } from '@codemirror/view'
+
   import { indentWithTab } from '@codemirror/commands'
   import { markdown as markdownLang } from '@codemirror/lang-markdown'
   import { languages } from '@codemirror/language-data'
+  import { EditorState } from '@codemirror/state'
+  import { keymap } from '@codemirror/view'
 
   export let markdown
-
   export let markdownInputTemp
-
   export let currentNoteId
 
   let isSaveSuccessful

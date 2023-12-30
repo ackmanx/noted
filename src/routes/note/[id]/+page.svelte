@@ -1,6 +1,6 @@
-<script>
-  import Header from '$lib/components/Header.svelte'
+<script lang="ts">
   import Body from '$lib/components/Body.svelte'
+  import Header from '$lib/components/Header.svelte'
 
   let isPreviewActive = true
 

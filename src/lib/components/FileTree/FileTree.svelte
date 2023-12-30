@@ -1,8 +1,7 @@
-<script>
+<script lang="ts">
   import TreeItem from '$lib/components/FileTree/TreeItem.svelte'
 
   export let fileTree
-
   export let onClickLeaf
 </script>
 
