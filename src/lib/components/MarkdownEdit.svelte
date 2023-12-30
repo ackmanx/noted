@@ -46,7 +46,7 @@
 
   async function handleSave() {
     const response = await fetch(`/api/note/${currentNoteId}`, {
-      method: 'POST',
+      method: currentNoteId ? 'POST' : 'PUT',
       body: JSON.stringify({ markdown: markdownInputTemp }),
     })
 

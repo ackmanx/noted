@@ -7,6 +7,20 @@ export async function GET({ params }) {
   return json(note)
 }
 
+export async function PUT({ request }) {
+  const newNote = {
+    _id: Math.random().toString(16).slice(2),
+    markdown: (await request.json()).markdown,
+    author: 'ackmanx',
+    isDirectory: false,
+    path: `${Math.random().toString(16).slice(2)}.md`,
+  }
+
+  await notes.insertOne(newNote)
+
+  return json({ success: true })
+}
+
 export async function POST({ request, params }) {
   const noteInDB = await notes.findOne({ _id: params.id })
 
