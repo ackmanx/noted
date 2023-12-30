@@ -1,9 +1,8 @@
 <script>
   import { marked } from 'marked'
 
-  /** @type string */
   export let markdown = ''
-  /** @type string | undefined */
+
   export let markdownInputTemp = ''
 </script>
 

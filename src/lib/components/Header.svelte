@@ -2,7 +2,6 @@
   import PreviewIcon from '$lib/images/PreviewIcon.svelte'
   import EditIcon from '$lib/images/EditIcon.svelte'
 
-  /** @type boolean */
   export let isPreviewActive
 </script>
 

@@ -2,7 +2,6 @@
   import Header from '$lib/components/Header.svelte'
   import Body from '$lib/components/Body.svelte'
 
-  /** @type boolean */
   let isPreviewActive = true
 
   // +page components receive props from their respective +page.server file

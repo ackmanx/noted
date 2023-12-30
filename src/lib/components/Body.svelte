@@ -4,20 +4,18 @@
 
   import FolderView from './FolderView.svelte'
 
-  /** @type boolean */
   export let isPreviewActive
-  /** @type TreeViewNode[] */
+
   export let fileTree
-  /** @type string[] */
+
   export let foldersIdList
-  /** @type string | undefined */
+
   export let markdown
-  /** @type string | undefined */
+
   export let currentNoteId
 
-  /** @type string | undefined */
   let markdownInput = markdown
-  /** @type string | undefined */
+
   let markdownInputTemp
 </script>
 
