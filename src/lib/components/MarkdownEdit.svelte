@@ -14,6 +14,8 @@
   /** @type string | undefined */
   export let currentNoteId
 
+  let isSaveSuccessful
+
   onMount(() => {
     // The Markdown parser will dynamically load parsers
     // for code blocks, using @codemirror/language-data to
@@ -45,16 +47,27 @@
   })
 
   async function handleSave() {
-    const response = await fetch(`/api/note/${currentNoteId}`, {
-      method: currentNoteId ? 'POST' : 'PUT',
-      body: JSON.stringify({ markdown: markdownInputTemp }),
-    })
+    try {
+      await fetch(`/api/note/${currentNoteId}`, {
+        method: currentNoteId ? 'POST' : 'PUT',
+        body: JSON.stringify({ markdown: markdownInputTemp }),
+      })
 
-    const json = await response.json()
+      isSaveSuccessful = true
+    } catch (error) {
+      isSaveSuccessful = false
+    }
   }
 </script>
 
 <button on:click={handleSave}>Save</button>
+
+{#if isSaveSuccessful}
+  Success!
+{:else if isSaveSuccessful === false}
+  Failure!
+{/if}
+
 <div class="codemirror-container">
   <!-- CodeMirror markdown editor is injected here due to `parent` field above -->
 </div>
