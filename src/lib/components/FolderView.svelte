@@ -9,13 +9,19 @@
   export let markdownInputTemp
   /** @type string[] */
   export let foldersIdList
+  export let currentNoteId
 
   async function handleFetchMarkdown({ detail }) {
     if (foldersIdList.includes(detail.id)) {
       return
     }
 
-    window.location.href = `/note/${detail.id}`
+    const response = await fetch(`/api/note/${detail.id}`)
+    const json = await response.json()
+
+    currentNoteId = detail.id
+    markdownInput = json.markdown
+    markdownInputTemp = undefined
   }
 </script>
 

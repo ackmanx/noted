@@ -44,6 +44,7 @@
     {foldersIdList}
     bind:markdownInput
     bind:markdownInputTemp
+    bind:currentNoteId
   />
 
   <div class="markdown">
