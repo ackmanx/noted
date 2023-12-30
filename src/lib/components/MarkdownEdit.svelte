@@ -48,14 +48,16 @@
 
   async function handleSave() {
     try {
-      await fetch(`/api/note/${currentNoteId}`, {
+      const response = await fetch(`/api/note/${currentNoteId}`, {
         method: currentNoteId ? 'POST' : 'PUT',
         body: JSON.stringify({ markdown: markdownInputTemp }),
       })
 
-      isSaveSuccessful = true
+      isSaveSuccessful = response.status === 200
     } catch (error) {
       isSaveSuccessful = false
+    } finally {
+      setTimeout(() => (isSaveSuccessful = undefined), 3000)
     }
   }
 </script>
