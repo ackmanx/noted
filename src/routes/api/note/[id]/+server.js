@@ -1,3 +1,5 @@
+import { ObjectId } from 'mongodb'
+
 import { json } from '@sveltejs/kit'
 
 import { notes } from '$lib/db/notes.js'
@@ -9,11 +11,11 @@ export async function GET({ params }) {
 
 export async function PUT({ request }) {
   const newNote = {
-    _id: Math.random().toString(16).slice(2),
+    _id: new ObjectId().toString(),
     markdown: (await request.json()).markdown,
     author: 'ackmanx',
     isDirectory: false,
-    path: `${Math.random().toString(16).slice(2)}.md`,
+    path: `${new ObjectId().toString()}.md`,
   }
 
   await notes.insertOne(newNote)
