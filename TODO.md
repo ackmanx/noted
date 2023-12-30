@@ -1,10 +1,10 @@
 # Honey Do Do
 
+## Update url with ID without causing a re-render that loses folder open/close state
+
 ## Add a folder
 
 ## Add a note to a folder
-
-## Save a note
 
 ## Export notes to markdown files
 
