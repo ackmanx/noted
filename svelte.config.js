@@ -1,13 +1,14 @@
-// import sveltePreprocess from 'svelte-preprocess'
+import sveltePreprocess from 'svelte-preprocess'
+
 import adapter from '@sveltejs/adapter-vercel'
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     adapter: adapter(),
-    // This is necessary to use TypeScript in .svelte files
-    // Without it TS will work in .ts files, but server will error out when a Svelte file encounters TS
-    // preprocess: sveltePreprocess(),
   },
+  // Tell Svelte to pre-process TS scripts before building, because Svelte only understands JS
+  preprocess: sveltePreprocess(),
 }
 
 export default config
