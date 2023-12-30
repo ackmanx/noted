@@ -1,3 +1,5 @@
+import type { Document } from 'mongodb'
+
 import { notes } from '$lib/db/notes.js'
 
 export const load = async function ({ params }) {
@@ -46,7 +48,13 @@ export const load = async function ({ params }) {
   }
 }
 
-function recurse(dbFiles, parent, level, dbFilesForUser, foldersIdList) {
+function recurse(
+  dbFiles: Document[],
+  parent,
+  level,
+  dbFilesForUser,
+  foldersIdList
+) {
   const dbFilesForLevel = dbFiles.filter(
     (filterFile) => filterFile.path.split('/').length === level
   )

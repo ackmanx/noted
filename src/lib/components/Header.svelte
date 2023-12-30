@@ -1,8 +1,7 @@
-<script>
-  import PreviewIcon from '$lib/images/PreviewIcon.svelte'
+<script lang="ts">
   import EditIcon from '$lib/images/EditIcon.svelte'
+  import PreviewIcon from '$lib/images/PreviewIcon.svelte'
 
-  /** @type boolean */
   export let isPreviewActive
 </script>
 

@@ -1,17 +1,15 @@
-<script>
+<script lang="ts">
+  import { EditorView, basicSetup } from 'codemirror'
   import { onMount } from 'svelte'
-  import { basicSetup, EditorView } from 'codemirror'
-  import { EditorState } from '@codemirror/state'
-  import { keymap } from '@codemirror/view'
+
   import { indentWithTab } from '@codemirror/commands'
   import { markdown as markdownLang } from '@codemirror/lang-markdown'
   import { languages } from '@codemirror/language-data'
+  import { EditorState } from '@codemirror/state'
+  import { keymap } from '@codemirror/view'
 
-  /** @type string | undefined */
   export let markdown
-  /** @type string | undefined */
   export let markdownInputTemp
-  /** @type string | undefined */
   export let currentNoteId
 
   let isSaveSuccessful
@@ -48,14 +46,16 @@
 
   async function handleSave() {
     try {
-      await fetch(`/api/note/${currentNoteId}`, {
+      const response = await fetch(`/api/note/${currentNoteId}`, {
         method: currentNoteId ? 'POST' : 'PUT',
         body: JSON.stringify({ markdown: markdownInputTemp }),
       })
 
-      isSaveSuccessful = true
+      isSaveSuccessful = response.status === 200
     } catch (error) {
       isSaveSuccessful = false
+    } finally {
+      setTimeout(() => (isSaveSuccessful = undefined), 3000)
     }
   }
 </script>

@@ -1,13 +1,9 @@
-<script>
+<script lang="ts">
   import FileTree from '$lib/components/FileTree/FileTree.svelte'
 
-  /** @type TreeViewNode[] */
   export let fileTree
-  /** @type string | undefined */
   export let markdownInput
-  /** @type string | undefined */
   export let markdownInputTemp
-  /** @type string[] */
   export let foldersIdList
   export let currentNoteId
 
