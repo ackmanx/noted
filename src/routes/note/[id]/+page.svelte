@@ -19,10 +19,4 @@
 
 <Header bind:isPreviewActive />
 
-<Body
-  {isPreviewActive}
-  {fileTree}
-  {foldersIdList}
-  markdown={note?.markdown}
-  currentNoteId={note?._id}
-/>
+|<Body {isPreviewActive} {fileTree} {foldersIdList} {note} />

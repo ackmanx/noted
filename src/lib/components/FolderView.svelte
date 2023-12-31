@@ -6,6 +6,7 @@
   export let markdownInputTemp
   export let foldersIdList
   export let currentNoteId
+  export let currentDirectory
 
   async function handleFetchMarkdown({ detail }) {
     if (foldersIdList.includes(detail.id)) {
@@ -13,10 +14,21 @@
     }
 
     const response = await fetch(`/api/note/${detail.id}`)
-    const json = await response.json()
+    const fetchedNote = await response.json()
+
+    let fetchedNoteDirectory
+
+    if (fetchedNote.isDirectory) {
+      fetchedNoteDirectory = fetchedNote.path
+    } else {
+      fetchedNoteDirectory = fetchedNote.path.split('/')
+      fetchedNoteDirectory.pop()
+      fetchedNoteDirectory = fetchedNoteDirectory.join('/')
+    }
 
     currentNoteId = detail.id
-    markdownInput = json.markdown
+    currentDirectory = fetchedNoteDirectory
+    markdownInput = fetchedNote.markdown
     markdownInputTemp = undefined
   }
 </script>

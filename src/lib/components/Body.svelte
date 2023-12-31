@@ -6,11 +6,12 @@
   export let isPreviewActive: boolean
   export let fileTree: any
   export let foldersIdList: string[]
-  export let markdown: string = undefined
-  export let currentNoteId: string | undefined = undefined
+  export let note: any = undefined
 
-  let markdownInput = markdown
+  let currentDirectory
+  let markdownInput = note?.markdown
   let markdownInputTemp
+  let currentNoteId = note?._id
 </script>
 
 <style>
@@ -37,18 +38,20 @@
     bind:markdownInput
     bind:markdownInputTemp
     bind:currentNoteId
+    bind:currentDirectory
   />
 
   <div class="markdown">
     {#if isPreviewActive}
-      <article class="prose">
+      Current directory: {currentDirectory}
+      <article>
         <MarkdownView markdown={markdownInput} {markdownInputTemp} />
       </article>
     {:else}
       <MarkdownEdit
         bind:markdown={markdownInput}
         bind:markdownInputTemp
-        {currentNoteId}
+        currentNoteId={note?._id}
       />
     {/if}
   </div>
