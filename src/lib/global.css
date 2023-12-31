@@ -65,11 +65,30 @@ h1 {
   outline: none;
 }
 
+.cm-editor {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
 .cm-editor .cm-gutters {
-  background-color: #1f1f1f;
+  background-color: #ffffff;
   border: none;
 }
 
 .cm-editor .cm-gutters .cm-activeLineGutter {
-  background-color: #1f1f1f;
+  background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cm-editor {
+    background-color: initial;
+  }
+
+  .cm-editor .cm-gutters {
+    background-color: #1f1f1f;
+  }
+
+  .cm-editor .cm-gutters .cm-activeLineGutter {
+    background-color: #1f1f1f;
+  }
 }
