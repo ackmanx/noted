@@ -19,11 +19,21 @@
     display: flex;
   }
 
+  .folder-panel {
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+
   .markdown {
     flex-grow: 1;
+    height: calc(100vh - 100px);
     background-color: #1f1f1f;
     border-radius: 15px;
     padding: 15px;
+    overflow: scroll;
   }
 </style>
 
@@ -35,14 +45,16 @@
    - Changes are applied to it, which then makes it available for view mode automatically
  -->
 <main>
-  <FolderView
-    {fileTree}
-    {foldersIdList}
-    bind:markdownInput
-    bind:markdownInputTemp
-    bind:currentNoteId
-    bind:currentDirectory
-  />
+  <div class="folder-panel">
+    <FolderView
+      {fileTree}
+      {foldersIdList}
+      bind:markdownInput
+      bind:markdownInputTemp
+      bind:currentNoteId
+      bind:currentDirectory
+    />
+  </div>
 
   <div class="markdown">
     {#if isPreviewActive}
