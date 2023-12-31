@@ -60,14 +60,19 @@
   }
 </script>
 
-<button on:click={handleSave}>Save</button>
+<style>
+</style>
 
-{#if isSaveSuccessful}
-  Success!
-{:else if isSaveSuccessful === false}
-  Failure!
-{/if}
+<container>
+  <button on:click={handleSave}>Save</button>
 
-<div class="codemirror-container">
-  <!-- CodeMirror markdown editor is injected here due to `parent` field above -->
-</div>
+  {#if isSaveSuccessful}
+    Success!
+  {:else if isSaveSuccessful === false}
+    Failure!
+  {/if}
+
+  <div class="codemirror-container">
+    <!-- CodeMirror markdown editor is injected here due to `parent` field above -->
+  </div>
+</container>

@@ -57,3 +57,7 @@ h1 {
 /*
  * END DARK MODE
  */
+
+.cm-editor.cm-focused {
+  outline: none;
+}
