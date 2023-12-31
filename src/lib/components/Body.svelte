@@ -21,6 +21,9 @@
 
   .markdown {
     flex-grow: 1;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    padding: 15px;
   }
 </style>
 
@@ -43,7 +46,6 @@
 
   <div class="markdown">
     {#if isPreviewActive}
-      Current directory: {currentDirectory}
       <article>
         <MarkdownView markdown={markdownInput} {markdownInputTemp} />
       </article>

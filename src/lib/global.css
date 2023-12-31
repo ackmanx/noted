@@ -16,6 +16,10 @@ a {
   }
 }
 
+h1 {
+  margin-top: 0;
+}
+
 :root {
   --background-color: #ffffff;
   --font-color: #000000;
