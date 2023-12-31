@@ -71,7 +71,7 @@
       <MarkdownEdit
         bind:markdown={markdownInput}
         bind:markdownInputTemp
-        currentNoteId={note?._id}
+        {currentNoteId}
       />
     {/if}
   </div>
