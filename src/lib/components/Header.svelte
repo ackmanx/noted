@@ -40,7 +40,7 @@
 </style>
 
 <header>
-  <h1><a href="/">noted</a></h1>
+  <h1><a href="/" on:click={() => window.location.assign('/')}>noted</a></h1>
 
   <div class="icons-container">
     <button
