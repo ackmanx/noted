@@ -30,10 +30,16 @@
   .markdown {
     flex-grow: 1;
     height: calc(100vh - 100px);
-    background-color: #1f1f1f;
+    background-color: #edf0f5;
     border-radius: 15px;
     padding: 15px;
     overflow: scroll;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .markdown {
+      background-color: #1f1f1f;
+    }
   }
 </style>
 
