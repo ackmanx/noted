@@ -58,6 +58,18 @@ h1 {
  * END DARK MODE
  */
 
+/*
+ * Code Mirror theme overrides
+ */
 .cm-editor.cm-focused {
   outline: none;
+}
+
+.cm-editor .cm-gutters {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.cm-editor .cm-gutters .cm-activeLineGutter {
+  background-color: #1f1f1f;
 }
