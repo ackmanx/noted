@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { page } from '$app/stores'
   import FileTree from '$lib/components/FileTree/FileTree.svelte'
 
-  export let fileTree
+  const foldersIdList = $page.data.foldersIdList
+
   export let markdownInput
   export let markdownInputTemp
-  export let foldersIdList
   export let currentNoteId
   export let currentDirectory
 
@@ -33,4 +34,4 @@
   }
 </script>
 
-<FileTree {fileTree} onClickLeaf={handleFetchMarkdown} />
+<FileTree onClickLeaf={handleFetchMarkdown} />

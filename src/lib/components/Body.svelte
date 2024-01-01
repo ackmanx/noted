@@ -4,14 +4,11 @@
   import MarkdownView from './MarkdownView.svelte'
 
   export let isPreviewActive: boolean
-  export let fileTree: any
-  export let foldersIdList: string[]
-  export let note: any = undefined
 
   let currentDirectory
-  let markdownInput = note?.markdown
-  let markdownInputTemp
-  let currentNoteId = note?._id
+  let markdownInput //fetched on click of a file tree node
+  let markdownInputTemp //temp version used while editing
+  let currentNoteId //set during fetch of file tree node
 </script>
 
 <style>
@@ -53,8 +50,6 @@
 <main>
   <div class="folder-panel">
     <FolderView
-      {fileTree}
-      {foldersIdList}
       bind:markdownInput
       bind:markdownInputTemp
       bind:currentNoteId

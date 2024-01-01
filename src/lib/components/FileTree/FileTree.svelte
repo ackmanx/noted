@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { page } from '$app/stores'
   import TreeItem from '$lib/components/FileTree/TreeItem.svelte'
 
-  export let fileTree
   export let onClickLeaf
+
+  const fileTree = $page.data.fileTree
 </script>
 
 <style>
