@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import FileTree from '$lib/components/FileTree/FileTree.svelte'
+  import ThreeDotMenu from '$lib/images/ThreeDotMenu.svelte'
 
   const foldersIdList = $page.data.foldersIdList
 
@@ -34,4 +35,19 @@
   }
 </script>
 
-<FileTree onClickLeaf={handleFetchMarkdown} />
+<style>
+  .menu {
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+</style>
+
+<section>
+  <div class="menu">
+    <ThreeDotMenu />
+  </div>
+  <FileTree onClickLeaf={handleFetchMarkdown} />
+</section>
