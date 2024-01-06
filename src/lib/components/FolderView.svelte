@@ -38,15 +38,23 @@
 <style>
   .menu {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 10px;
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 5px;
   }
 </style>
 
 <section>
   <div class="menu">
+    <em>Favorites</em>
+    <ThreeDotMenu />
+  </div>
+  <div class="menu">
+    <em>Documents</em>
     <ThreeDotMenu />
   </div>
   <FileTree onClickLeaf={handleFetchMarkdown} />
