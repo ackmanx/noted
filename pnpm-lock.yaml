@@ -20,12 +20,12 @@ dependencies:
   '@codemirror/view':
     specifier: ^6.22.2
     version: 6.22.2
+  '@fontsource-variable/inter':
+    specifier: ^5.0.16
+    version: 5.0.16
   '@fontsource/cabin-sketch':
     specifier: ^5.0.18
     version: 5.0.18
-  '@fontsource/inter':
-    specifier: ^5.0.16
-    version: 5.0.16
   '@sveltejs/kit':
     specifier: ^2.0.6
     version: 2.0.6(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.8)(vite@5.0.10)
@@ -725,12 +725,12 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/cabin-sketch@5.0.18:
-    resolution: {integrity: sha512-e0cBcr8qquDnBV5MBzZ87P0kUPOxz0NmuwWWrEM1jatNXvc/kgNrtMkGM+robnMQHJVg/Qbp+qgWUTUYFcBVpw==}
+  /@fontsource-variable/inter@5.0.16:
+    resolution: {integrity: sha512-k+BUNqksTL+AN+o+OV7ILeiE9B5M5X+/jA7LWvCwjbV9ovXTqZyKRhA/x7uYv/ml8WQ0XNLBM7cRFIx4jW0/hg==}
     dev: false
 
-  /@fontsource/inter@5.0.16:
-    resolution: {integrity: sha512-qF0aH5UiZvCmneX5orJbVRoc2VTyLTV3X/7laMp03Qt28L+B9tFlZODOGUL64wDWc69YVdi1LeJB0cIgd51lvw==}
+  /@fontsource/cabin-sketch@5.0.18:
+    resolution: {integrity: sha512-e0cBcr8qquDnBV5MBzZ87P0kUPOxz0NmuwWWrEM1jatNXvc/kgNrtMkGM+robnMQHJVg/Qbp+qgWUTUYFcBVpw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:

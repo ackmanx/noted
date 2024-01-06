@@ -59,9 +59,7 @@
 
   <div class="markdown">
     {#if isPreviewActive}
-      <article>
-        <MarkdownView markdown={markdownInput} {markdownInputTemp} />
-      </article>
+      <MarkdownView markdown={markdownInput} {markdownInputTemp} />
     {:else}
       <MarkdownEdit
         bind:markdown={markdownInput}

@@ -5,10 +5,11 @@ Layout files run before page files so I guess this is the starting point for the
 -->
 
 <script lang="ts">
+  import '@fontsource-variable/inter'
   import '@fontsource/cabin-sketch'
-  import '@fontsource/inter'
 
   import '$lib/global.css'
+  import '$lib/markdown-theme.css'
 </script>
 
 <div id="app">
