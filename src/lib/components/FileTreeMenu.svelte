@@ -1,20 +1,13 @@
 <script lang="ts">
   import ThreeDotMenu from '$lib/images/ThreeDotMenu.svelte'
 
-  let threeDotMenuRef: SVGElement
   let isMenuOpen = false
 
-  function toggleIsMenuOpen() {
+  function toggleIsMenuOpen(event: MouseEvent) {
     let root = document.documentElement
 
-    root.style.setProperty(
-      '--dot-menu-top',
-      `${threeDotMenuRef.getBoundingClientRect().top}px`
-    )
-    root.style.setProperty(
-      '--dot-menu-left',
-      `${threeDotMenuRef.getBoundingClientRect().left + 20}px`
-    )
+    root.style.setProperty('--dot-menu-top', `${event.clientY}px`)
+    root.style.setProperty('--dot-menu-left', `${event.clientX}px`)
 
     isMenuOpen = !isMenuOpen
   }
@@ -58,7 +51,7 @@
 </style>
 
 <section>
-  <ThreeDotMenu bind:threeDotMenuRef onClick={toggleIsMenuOpen} />
+  <ThreeDotMenu onClick={toggleIsMenuOpen} />
 
   {#if isMenuOpen}
     <!-- svelte-ignore a11y-no-static-element-interactions -->
