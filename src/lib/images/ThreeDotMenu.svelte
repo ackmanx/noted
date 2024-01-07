@@ -1,3 +1,7 @@
+<script lang="ts">
+  export let onClick: () => void
+</script>
+
 <style>
   svg {
     width: 20px;
@@ -5,11 +9,14 @@
   }
 </style>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svg
   width="128pt"
   height="128pt"
   viewBox="0 0 128 128"
   xmlns="http://www.w3.org/2000/svg"
+  on:click={onClick}
 >
   <g fill-rule="evenodd">
     <path

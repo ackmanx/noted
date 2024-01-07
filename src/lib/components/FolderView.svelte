@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import FileTree from '$lib/components/FileTree/FileTree.svelte'
-  import ThreeDotMenu from '$lib/images/ThreeDotMenu.svelte'
+  import FileTreeMenu from '$lib/components/FileTreeMenu.svelte'
 
   const foldersIdList = $page.data.foldersIdList
 
@@ -36,7 +36,7 @@
 </script>
 
 <style>
-  .menu {
+  .file-tree-menu-section {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -49,9 +49,9 @@
 </style>
 
 <section>
-  <div class="menu">
+  <div class="file-tree-menu-section">
     <em>Documents</em>
-    <ThreeDotMenu />
+    <FileTreeMenu />
   </div>
   <FileTree onClickLeaf={handleFetchMarkdown} />
 </section>
