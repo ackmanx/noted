@@ -33,9 +33,18 @@
     position: absolute;
     top: var(--dot-menu-top);
     left: var(--dot-menu-left);
-    background-color: cadetblue;
     padding: 10px;
     border-radius: 5px;
+    background-color: #28292a;
+    border: 1px solid white;
+  }
+
+  li {
+    padding: 5px;
+
+    &:hover {
+      color: red;
+    }
   }
 </style>
 
