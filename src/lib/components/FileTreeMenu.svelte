@@ -35,8 +35,17 @@
     left: var(--dot-menu-left);
     padding: 10px;
     border-radius: 5px;
-    background-color: #28292a;
-    border: 1px solid white;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 3px 4px 10px 0 #c8c8c8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .options-menu {
+      background-color: #28292a;
+      border: 1px solid #1f1f1f;
+      box-shadow: 3px 4px 10px 0 #1f1f1f;
+    }
   }
 
   li {

@@ -46,6 +46,12 @@
     padding: 8px;
     border-radius: 5px;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .file-tree-menu-section {
+      background-color: #444;
+    }
+  }
 </style>
 
 <section>

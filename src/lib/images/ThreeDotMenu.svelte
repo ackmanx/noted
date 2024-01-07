@@ -17,6 +17,7 @@
   height="128pt"
   viewBox="0 0 128 128"
   xmlns="http://www.w3.org/2000/svg"
+  fill="currentColor"
   bind:this={threeDotMenuRef}
   on:click={onClick}
 >
