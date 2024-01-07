@@ -1,5 +1,6 @@
 <script lang="ts">
   export let onClick: () => void
+  export let threeDotMenuRef: SVGElement
 </script>
 
 <style>
@@ -16,6 +17,7 @@
   height="128pt"
   viewBox="0 0 128 128"
   xmlns="http://www.w3.org/2000/svg"
+  bind:this={threeDotMenuRef}
   on:click={onClick}
 >
   <g fill-rule="evenodd">
