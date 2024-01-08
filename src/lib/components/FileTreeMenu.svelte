@@ -11,6 +11,10 @@
 
     isMenuOpen = !isMenuOpen
   }
+
+  function handleCreateNote() {
+    //todo majerus: create note here
+  }
 </script>
 
 <style>
@@ -59,7 +63,7 @@
     <div class="options-menu-overlay" on:click={toggleIsMenuOpen}>
       <div class="options-menu">
         <ul role="menu">
-          <li role="menuitem">Create Note</li>
+          <li role="menuitem" on:click={handleCreateNote}>Create Note</li>
           <li role="menuitem">Create Folder</li>
           <li role="menuitem">Delete Folder</li>
         </ul>

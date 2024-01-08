@@ -39,7 +39,7 @@
   .file-tree-menu-section {
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    align-items: center;
     margin-top: 5px;
     margin-bottom: 10px;
     background-color: #efefef;

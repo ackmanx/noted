@@ -3,6 +3,12 @@
 </script>
 
 <style>
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   svg {
     width: 20px;
     height: 20px;
