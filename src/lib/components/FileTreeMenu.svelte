@@ -1,6 +1,7 @@
 <script lang="ts">
   import ThreeDotMenu from '$lib/images/ThreeDotMenu.svelte'
 
+  let isSaveSuccessful = undefined
   let isMenuOpen = false
 
   function toggleIsMenuOpen(event: MouseEvent) {
@@ -12,8 +13,19 @@
     isMenuOpen = !isMenuOpen
   }
 
-  function handleCreateNote() {
-    //todo majerus: create note here
+  async function handleCreateNote() {
+    try {
+      const response = await fetch(`/api/note/too-lazy-to-make-another-route`, {
+        method: 'PUT',
+        body: JSON.stringify({ markdown: '' }),
+      })
+
+      isSaveSuccessful = response.status === 200
+    } catch (error) {
+      isSaveSuccessful = false
+    } finally {
+      setTimeout(() => (isSaveSuccessful = undefined), 3000)
+    }
   }
 </script>
 
@@ -56,6 +68,12 @@
 
 <section>
   <ThreeDotMenu onClick={toggleIsMenuOpen} />
+
+  {#if isSaveSuccessful}
+    Success!
+  {:else if isSaveSuccessful === false}
+    Failure!
+  {/if}
 
   {#if isMenuOpen}
     <!-- svelte-ignore a11y-no-static-element-interactions -->
