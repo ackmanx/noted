@@ -10,12 +10,14 @@ export async function GET({ params }) {
 }
 
 export async function PUT({ request }) {
+  const body = await request.json()
+
   const newNote = {
     _id: new ObjectId().toString(),
-    markdown: (await request.json()).markdown,
+    markdown: body.markdown,
     author: 'ackmanx',
     isDirectory: false,
-    path: `${new ObjectId().toString()}.md`,
+    path: body.path,
   }
 
   await notes.insertOne(newNote)

@@ -1,7 +1,8 @@
 <script lang="ts">
   import ThreeDotMenu from '$lib/images/ThreeDotMenu.svelte'
 
-  let isSaveSuccessful = undefined
+  export let showNewFileInput
+
   let isMenuOpen = false
 
   function toggleIsMenuOpen(event: MouseEvent) {
@@ -11,21 +12,6 @@
     root.style.setProperty('--dot-menu-left', `${event.clientX}px`)
 
     isMenuOpen = !isMenuOpen
-  }
-
-  async function handleCreateNote() {
-    try {
-      const response = await fetch(`/api/note/too-lazy-to-make-another-route`, {
-        method: 'PUT',
-        body: JSON.stringify({ markdown: '' }),
-      })
-
-      isSaveSuccessful = response.status === 200
-    } catch (error) {
-      isSaveSuccessful = false
-    } finally {
-      setTimeout(() => (isSaveSuccessful = undefined), 3000)
-    }
   }
 </script>
 
@@ -69,19 +55,13 @@
 <section>
   <ThreeDotMenu onClick={toggleIsMenuOpen} />
 
-  {#if isSaveSuccessful}
-    Success!
-  {:else if isSaveSuccessful === false}
-    Failure!
-  {/if}
-
   {#if isMenuOpen}
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="options-menu-overlay" on:click={toggleIsMenuOpen}>
       <div class="options-menu">
         <ul role="menu">
-          <li role="menuitem" on:click={handleCreateNote}>Create Note</li>
+          <li role="menuitem" on:click={showNewFileInput}>Create Note</li>
           <li role="menuitem">Create Folder</li>
           <li role="menuitem">Delete Folder</li>
         </ul>
