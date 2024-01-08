@@ -16,7 +16,9 @@
 * Prompt for username on load if none found in local storage
   * Use this username for subsequent actions
 
-## Important
+-------------------
+
+# Important
 * Add a folder
 * Add a note to a folder
 * See note filename
@@ -24,7 +26,7 @@
 * Move note to a different folder
 * Update url with ID without causing a re-render that loses folder open/close state
 
-## Would be nice
+# Would be nice
 * Change the markdown highlighting so heading levels are different
   * The only way to do this is to create my own theme and import it as an extension
     * When creating an EditorView, import the theme and pass it to the view's extensions
