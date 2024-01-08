@@ -1,7 +1,24 @@
+# MVP
+
+## Documents
+* Create (done)
+* Rename
+* Update (done)
+* Delete
+
+## Folders
+* Create
+* Rename
+* Update
+* Delete
+
+## Users
+* Prompt for username on load if none found in local storage
+  * Use this username for subsequent actions
+
 ## Important
 * Add a folder
 * Add a note to a folder
-* Delete note
 * See note filename
 * Edit note filename
 * Move note to a different folder
